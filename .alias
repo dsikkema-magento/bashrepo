@@ -1,0 +1,100 @@
+alias ea='vim ~/.alias; . ~/.alias'
+
+# Navigation
+alias cdh='cd ~/home'
+alias mag='cd ~/home/vagrant/magento/m2'
+alias mag7='cd ~/home/vagrant/m7/m2'
+alias magc='cd ~/home/vagrant/magento/m2copy/'
+alias magin='cd ~/home/m2infra/'
+alias maginc='cd ~/home/m2infra-copy/'
+
+alias mags='cd ~/home/sample-data'
+alias magsc='cd ~/home/sample-data-copy'
+
+alias magsee='cd ~/home/sample-data-ee'
+alias magseec='cd ~/home/sample-data-ee-copy'
+
+alias sam='cd ~/home/sample-exts/'
+alias magee='cd ~/home/vagrant/magento/m2ee/'
+alias mageec='cd ~/home/vagrant/magento/m2eecopy'
+alias magb='cd ~/home/vagrant/magento/m2b2b/'
+alias magz='cd ~/home/m2zf1/'
+alias cdv='cd ~/home/vagrant/'
+alias cdd='cd ~/home/docker/'
+alias vmag='cdv;cd magento;'
+alias cda='cd /opt/local/apache2/htdocs/'
+
+
+# CE & EE linkage
+alias m2link='php -f ~/home/build-ee.php -- --command link --ce-source ~/home/m2 --ee-source ~/home/m2ee --exclude true'
+alias m2unlink='php -f ~/home/build-ee.php -- --command unlink --ce-source ~/home/m2 --ee-source ~/home/m2ee'
+
+alias m2link7='php -f ~/home/vagrant/magento/m2ee/build-ee.php -- --command link --ce-source ~/home/vagrant/magento/m2 --ee-source ~/home/vagrant/magento/m2ee --exclude true'
+alias m2unlink7='php -f ~/home/build-ee.php -- --command unlink --ce-source ~/home/vagrant/magento/m2 --ee-source ~/home/vagrant/magento/m2ee'
+alias m2relink7='m2unlink7; m2link7'
+
+
+alias m2relink='m2unlink; m2link'
+
+# Magento application asset management
+alias rmc='rm -rf var/page_cache/ var/cache/ var/view_preprocessed/ pub/static/*'
+alias rmjc='rm -rf var/page_cache/ var/cache/'
+alias rmv='rm -rf var/*'
+alias rit='rm -rf  dev/tests/integration/tmp/*'
+alias rmp='rm -rf pub/static/*'
+alias rma='rmv;rmc;rit'
+
+# Magento application commands
+alias mup='bin/magento setup:upgrade';
+alias rein='. reinstall.sh'
+alias unin='. uninstall.sh'
+alias stcom='bin/magento setup:di:compile'
+alias mtcom='bin/magento setup:di:compile-multi-tenant'
+
+# Tool shortcuts 
+alias svim='sudo vim'
+alias mysqlr='mysql -u root'
+alias mysqlrestart='sudo /opt/local/share/mysql56/support-files/mysql.server restart'
+alias ra='sudo apachectl restart'
+alias kom='/Applications/Komodo\ Edit\ 8.app/Contents/MacOS/komodo'
+alias ngr='sudo nginx -s reload'
+alias ngs='sudo nginx -s stop'
+alias phpfpmstart='sudo launchctl load -w /Library/LaunchDaemons/org.macports.php55-fpm.plist'
+alias phpfpmstop='sudo launchctl unload -w /Library/LaunchDaemons/org.macports.php55-fpm.plist'
+alias ucomposer='/usr/local/bin/composer'
+alias vus='vagrant up; vagrant ssh'
+
+#Git stuff
+
+alias glm='git fetch mainline; git checkout maindev; git pull'
+alias gf='git show --stat --oneline'
+alias gmm='git fetch mainline; git merge mainline/develop'
+alias gb='git branch'
+alias gbg='git branch | grep '
+alias gac='git add -A; git commit'
+alias gs='git status'
+alias gd='git diff'
+alias gl='git log'
+alias cb='git rev-parse --abbrev-ref HEAD'
+alias gcd='git checkout develop';
+alias bleach='rm -rf app lib; git checkout .;'
+alias gc='git checkout'
+alias gba='git branch -a'
+alias gbag='gba | grep '
+alias ghr='git reset --hard HEAD'
+alias ghrc='ghr; git clean -fd'
+alias cdo='cd /Applications/openproject/'
+
+# Docker
+alias dm='docker-machine '
+alias dc='docker-compose '
+
+# Vagrant
+alias pvhost='cat ~/home/vagrant/paliarush/etc/config.yaml | grep host_name'
+alias cdp='cd ~/home/vagrant/paliarush'
+
+# PhpStorm
+alias p='pstorm .'
+alias ghreverything='mag ; ghr ; magee ; ghr ; mags ; ghr ; magsee ; ghr ; maginc ; ghr ; mag'
+alias m2v='cdv && cd magento && vus'
+alias mc='magento-cloud'

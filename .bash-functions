@@ -1,0 +1,9 @@
+function moveLogs() {
+    mkdir -p  ../perf-data/$1/
+    mv class-hierarchy-log.html ../perf-data/$1/class-hierarchy-log.html
+    mv heavy-constructor-log ../perf-data/$1/heavy-constructor-log
+    mv minimal-class-hierarchy ../perf-data/$1/minimal-class-hierarchy
+    mv top-30-log ../perf-data/$1/top-30-log
+    mv next-20-log ../perf-data/$1/next-20-log
+}
+
