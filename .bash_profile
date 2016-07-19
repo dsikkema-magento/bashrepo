@@ -31,7 +31,7 @@ fi
 export PS1='\u@\H:\w$ '
 
 
-mag
+cdh
 
 
 # Automatically added by Magento Cloud CLI installer
